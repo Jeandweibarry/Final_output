@@ -1,7 +1,7 @@
 import tkinter as tk
 import sqlite3
 <<<<<<< HEAD
-#try
+
 =======
 >>>>>>> c7de6ed2daef9857d1a15182d34b395155e28463
 class account_registration:
