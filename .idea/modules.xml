@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Final_output.iml" filepath="$PROJECT_DIR$/.idea/Final_output.iml" />
+=======
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/Final_output.iml" filepath="$PROJECT_DIR$/.idea/Final_output.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/Final_output1.iml" filepath="$PROJECT_DIR$/.idea/Final_output1.iml" />
+>>>>>>> c7de6ed2daef9857d1a15182d34b395155e28463
+>>>>>>> f8dca2652fa7a388bb0faad5f517d3de28722078
     </modules>
   </component>
 </project>
