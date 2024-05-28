@@ -1,6 +1,10 @@
 import tkinter as tk
 import sqlite3
+<<<<<<< HEAD
 #Tite
+=======
+#Malvar
+>>>>>>> c7de6ed2daef9857d1a15182d34b395155e28463
 class account_registration:
     def __init__(self):
         self.Access = None
