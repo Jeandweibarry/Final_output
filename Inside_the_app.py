@@ -4,8 +4,6 @@ import tkinter as tk
 
 #con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
 
-
-
 import guiclass
 
 gui_design2 = guiclass.employee_personal_info()

@@ -1,10 +1,8 @@
 import tkinter as tk
 import sqlite3
 
-import Inside_the_app
-
-#con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
-#cursor = con.cursor()
+con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
+cursor = con.cursor()
 
 import guiclass
 
