@@ -1,7 +1,7 @@
 import sqlite3
 import tkinter as tk
 
-con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
+#con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
 
 import guiclass
 

@@ -3,8 +3,8 @@ import sqlite3
 
 import Inside_the_app
 
-con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
-cursor = con.cursor()
+#con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
+#cursor = con.cursor()
 
 import guiclass
 
@@ -246,10 +246,10 @@ class GUI:
     def Save_data(self):
 
         self.regulardeduc = float(self.sss_contritxt.get()) + float(self.philhealth_contritxt.get()) + float(
-            self.pagibig_contritxt.get()) + float(self.incometax_contritxt.get())
+        self.pagibig_contritxt.get()) + float(self.incometax_contritxt.get())
         self.otherdeduc = float(self.sss_loantxt.get()) + float(self.pagibig_loantxt.get()) + float(
-            self.faculty_savings_deposittxt.get()) + float(self.faculty_savings_loantxt.get()) + float(
-            self.salary_loantxt.get()) + float(self.other_loantxt.get())
+        self.faculty_savings_deposittxt.get()) + float(self.faculty_savings_loantxt.get()) + float(
+        self.salary_loantxt.get()) + float(self.other_loantxt.get())
 
         self.employee_number = self.employee_numbertxt.get()
         self.basic_income = self.Income1txt.get()

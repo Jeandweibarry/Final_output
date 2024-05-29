@@ -4,7 +4,7 @@ from tkinter import ttk
 # from PIL import Image, ImageTk
 import sqlite3
 
-con = sqlite3.connect("C:\\Users\\Jeff\\PycharmProjects\\FinalOutput\\employee_personal_info.db")
+#con = sqlite3.connect("C:\\Users\\Jeff\\PycharmProjects\\FinalOutput\\employee_personal_info.db")
 class employee_personal_info():
 
     def create_canvas(self, x, y):
