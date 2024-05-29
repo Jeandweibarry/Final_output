@@ -2,7 +2,7 @@ import tkinter as tk
 import sqlite3
 
 root = tk.Tk()
-
+#try
 class GUI:
     def __init__(self):
         self.create_account_button = None
@@ -15,7 +15,7 @@ class GUI:
         self.main_frame = None
         self.content_frame = tk.Frame(root, bg="gray")
         self.content_frame.pack(fill="both", expand=True)
-#        self.con = sqlite3.connect("C:\\Users\\Jeff\\PycharmProjects\\FinalOutput\\register_account.db")
+        self.con = sqlite3.connect("C:\\Users\\Jeff\\PycharmProjects\\FinalOutput\\register_account.db")
 
     def create_account(self):
         import Create_account
