@@ -1,6 +1,5 @@
 import tkinter as tk
 import sqlite3
-import Inside_the_app
 
 root = tk.Tk()
 
@@ -53,6 +52,7 @@ class GUI:
         cursor1.execute("SELECT * FROM registered WHERE username = '" + self.username_entry.get() + "' AND password = '" + self.password_entry.get() + "'")
         result = cursor1.fetchone()
         if result == (self.username_entry.get(), self.password_entry.get()):
+            import Inside_the_app
             root.destroy()
             ITA = Inside_the_app.GUI()
             ITA.create_content()

@@ -417,9 +417,8 @@ import guiclass
 
 gui_design2 = guiclass.employee_personal_info()
 
-
-window = tk.Tk()
-window.geometry('1000x1500')
+root = tk.Tk()
+root.geometry('1000x1500')
 # --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # COMMANDS --------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -804,5 +803,5 @@ other_loantxt = gui_design2.textbox1(frame1,750, 690, 18)
 total_deductxt = gui_design2.textbox1(frame1,750, 790, 18)
 
 
-window.resizable(False, False)
-window.mainloop()
+root.resizable(False, False)
+root.mainloop()
