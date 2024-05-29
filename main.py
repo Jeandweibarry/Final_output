@@ -1,8 +1,6 @@
 import tkinter as tk
 import sqlite3
 
-# test
-
 root = tk.Tk()
 #try
 class GUI:
