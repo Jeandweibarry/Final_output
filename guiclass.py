@@ -18,7 +18,7 @@ class employee_personal_info():
 
         self.frame_container = tk.Frame(self.canvas)
 
-        self.frame1 = tk.Frame(self.frame_container, width=995, height=1500, bg='gray')
+        self.frame1 = tk.Frame(self.frame_container, width=995, height=1800, bg='gray')
         self.frame1.pack()
 
         self.frame_container.update_idletasks()

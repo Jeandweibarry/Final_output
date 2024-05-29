@@ -1,5 +1,4 @@
 import tkinter as tk
-import Create_account
 import sqlite3
 
 root = tk.Tk()
@@ -19,6 +18,7 @@ class GUI:
         self.con = sqlite3.connect("C:\\Users\\Jeff\\PycharmProjects\\FinalOutput\\register_account.db")
 
     def create_account(self):
+        import Create_account
         account_registration = Create_account.account_registration()
         account_registration.create_account()
         account_registration.content()
@@ -52,14 +52,14 @@ class GUI:
         cursor1.execute("SELECT * FROM registered WHERE username = '" + self.username_entry.get() + "' AND password = '" + self.password_entry.get() + "'")
         result = cursor1.fetchone()
         if result == (self.username_entry.get(), self.password_entry.get()):
-            root.destroy()
             import Inside_the_app
+            root.destroy()
             ITA = Inside_the_app.GUI()
             ITA.create_content()
-
         else:
             self.access_denied = tk.Label(self.main_frame, text="Access denied, try again", font=("arial", 20), bg="#CDCDCD")
             self.access_denied.place(y=280, x=50)
+            pass
         self.con.commit()
         self.con.close()
 
