@@ -2,7 +2,6 @@ import sqlite3
 import tkinter as tk
 con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
 import guiclass
-import DATABASE_CLASS_C
 
 window = tk.Tk()
 window.title('Login System')
@@ -93,8 +92,7 @@ class GUI:
 
         print("Data transfered...")
         window.destroy()
-        GUI = DATABASE_CLASS_C.GUI()
-        GUI.create_content()
+        import DATABASE_CLASS_C
     def no(self):
         quit()
 

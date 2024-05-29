@@ -1,5 +1,4 @@
 import tkinter as tk
-import Create_account
 import sqlite3
 import Inside_the_app
 
@@ -20,6 +19,7 @@ class GUI:
         self.con = sqlite3.connect("C:\\Users\\Jeff\\PycharmProjects\\FinalOutput\\register_account.db")
 
     def create_account(self):
+        import Create_account
         account_registration = Create_account.account_registration()
         account_registration.create_account()
         account_registration.content()
