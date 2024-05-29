@@ -18,7 +18,7 @@ class employee_personal_info():
 
         self.frame_container = tk.Frame(self.canvas)
 
-        self.frame1 = tk.Frame(self.frame_container, width=995, height=1800, bg='light gray')
+        self.frame1 = tk.Frame(self.frame_container, width=995, height=1800, bg='gray')
         self.frame1.pack()
 
         self.frame_container.update_idletasks()
@@ -73,7 +73,7 @@ class employee_personal_info():
     def create_button(self, frame_container,command, x, y, button_name, bg, width_value, height_value, font_size):
         self.button_name = button_name
         self.bg = bg
-        self.button = Button(frame_container,command=command, text=button_name, width=width_value, height=height_value, fg = 'white', bg = bg, font =('Arial', font_size))
+        self.button = Button(frame_container,command=command, text=button_name, width=width_value, height=height_value, fg = 'black', bg = bg, font =('Arial', font_size))
         self.button.place(x=x, y=y)
         return self.button
 
