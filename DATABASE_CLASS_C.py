@@ -241,15 +241,15 @@ def Clear_data():
     other_loantxt.delete(0, 'end')
     total_deductxt.delete(0, 'end')
 
-<<<<<<< HEAD
-        self.regulardeduc = float(self.sss_contritxt.get()) + float(self.philhealth_contritxt.get()) + float(
-        self.pagibig_contritxt.get()) + float(self.incometax_contritxt.get())
-        self.otherdeduc = float(self.sss_loantxt.get()) + float(self.pagibig_loantxt.get()) + float(
-        self.faculty_savings_deposittxt.get()) + float(self.faculty_savings_loantxt.get()) + float(
-        self.salary_loantxt.get()) + float(self.other_loantxt.get())
-=======
+
+    self.regulardeduc = float(self.sss_contritxt.get()) + float(self.philhealth_contritxt.get()) + float(
+    self.pagibig_contritxt.get()) + float(self.incometax_contritxt.get())
+    self.otherdeduc = float(self.sss_loantxt.get()) + float(self.pagibig_loantxt.get()) + float(
+    self.faculty_savings_deposittxt.get()) + float(self.faculty_savings_loantxt.get()) + float(
+    self.salary_loantxt.get()) + float(self.other_loantxt.get())
+
 def Save_data():
->>>>>>> 943a30c8ad8c1a6fba053d7ee2b4f1c235666b2d
+
 
     regulardeduc = float(sss_contritxt.get()) + float(philhealth_contritxt.get()) + float(pagibig_contritxt.get()) + float(incometax_contritxt.get())
     otherdeduc = float(sss_loantxt.get()) + float(pagibig_loantxt.get()) + float(faculty_savings_deposittxt.get()) + float(faculty_savings_loantxt.get()) + float(salary_loantxt.get()) + float(other_loantxt.get())

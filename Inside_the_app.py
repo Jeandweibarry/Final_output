@@ -1,11 +1,11 @@
 import sqlite3
 import tkinter as tk
 
-<<<<<<< HEAD
+
 #con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
 
-=======
->>>>>>> 943a30c8ad8c1a6fba053d7ee2b4f1c235666b2d
+
+
 import guiclass
 
 gui_design2 = guiclass.employee_personal_info()
