@@ -1,13 +1,13 @@
 import sqlite3
 import tkinter as tk
-
 con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
-
 import guiclass
+import DATABASE_CLASS_C
 
 window = tk.Tk()
 window.title('Login System')
 window.geometry('1000x1500')
+window.resizable(False, False)
 
 gui_design2 = guiclass.employee_personal_info()
 
@@ -42,6 +42,7 @@ class GUI:
         pic_path = self.picture_pathtxt.get()
 
 
+
     # 4 Queries for the 4 tables/frames -------------------------------------------------------------------------------------------------------------------------------------------------
 
         #INSERT
@@ -61,7 +62,6 @@ class GUI:
 
         con.commit()
         con.close()
-        import DATABASE_CLASS_C
 
         # DELETE
         self.firstnametxt.delete(0,'end')
@@ -89,9 +89,14 @@ class GUI:
         self.state_provincetxt.delete(0,'end')
         self.zipcodetxt.delete(0,'end')
         self.picture_pathtxt.delete(0,'end')
+        self.picture_pathtxt.delete(0, 'end')
 
         print("Data transfered...")
-
+        window.destroy()
+        GUI = DATABASE_CLASS_C.GUI()
+        GUI.create_content()
+    def no(self):
+        quit()
 
     def create_content(self):
         # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -195,8 +200,10 @@ class GUI:
         self.no_file1lbl = gui_design2.label3(self.frame1,100, 100, 'No File Chosen', 11,1,7, 'bold')
 
         #BUTTON -----------------------------------------------------------------------------------------------------------------
-        self.savebutton = gui_design2.create_button(main_frame,lambda: self.Transfer_data(),25, 1080, 'Save', '#0CC0DF', 12, 2, 8)
-        self.cancelbutton = gui_design2.create_button(main_frame,lambda: None,120, 1080, 'Cancel', '#AB9C9C',12,2,8)
+        self.savebutton = gui_design2.create_button(main_frame, lambda: self.Transfer_data(),25, 1080, 'Save', '#0CC0DF', 12, 2, 8)
+        self.cancelbutton = gui_design2.create_button(main_frame, lambda: self.no, 120, 1080, 'Cancel', '#AB9C9C',12,2,8)
 
         #END PROGRAM
         window.mainloop()
+
+

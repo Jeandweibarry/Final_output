@@ -1,16 +1,8 @@
 import tkinter as tk
 import sqlite3
-
-import Inside_the_app
-
-con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
-cursor = con.cursor()
-
 import guiclass
 
 gui_design2 = guiclass.employee_personal_info()
-
-Inside_the_app.window.destroy()
 window = tk.Tk()
 
 
@@ -18,12 +10,15 @@ window = tk.Tk()
 
 # COMMANDS --------------------------------------------------------------------------------------------------------------------------------------------------------
 class GUI:
+    def __init__(self):
+        self.con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
+        self.cursor = self.con.cursor()
     def Search_data(self):
         # GET EMPLOYEE DATA
         employee_number = self.employee_numbertxt.get()
         print(employee_number)
-        cursor.execute(f"SELECT * FROM basic_info WHERE employee_number = {employee_number}")
-        employee = cursor.fetchone()
+        self.cursor.execute(f"SELECT * FROM basic_info WHERE employee_number = {employee_number}")
+        employee = self.cursor.fetchone()
         if employee:
             self.Departmenttxt.insert(0, employee[8])
             self.firstnametxt.insert(0, employee[0])
@@ -35,23 +30,23 @@ class GUI:
             self.employee_statustxt.insert(0, employee[11])
             self.designationtxt.insert(0, employee[9])
 
-        con.close()
+        self.con.close()
 
         print("Data transfered...")
 
     def Gross_Income(self):
-        income1 = float(self.Rate_hour1txt.get()) * float(self.No_Hours1txt.get())
-        income2 = float(self.Rate_hour2txt.get()) * float(self.No_Hours2txt.get())
-        income3 = float(self.Rate_hour3txt.get()) * float(self.No_Hours3txt.get())
-        self.grossincome = income1 + income2 + income3
+        self.income1 = float(self.Rate_hour1txt.get()) * float(self.No_Hours1txt.get())
+        self.income2 = float(self.Rate_hour2txt.get()) * float(self.No_Hours2txt.get())
+        self.income3 = float(self.Rate_hour3txt.get()) * float(self.No_Hours3txt.get())
+        self.grossincome = self.income1 + self.income2 + self.income3
 
-        self.Income1txt.insert(0, income1)
-        self.Income2txt.insert(0, income2)
-        self.Income3txt.insert(0, income3)
+        self.Income1txt.insert(0, self.income1)
+        self.Income2txt.insert(0, self.income2)
+        self.Income3txt.insert(0, self.income3)
         self.Gross_incometxt.insert(0, self.grossincome)
 
     def Net_Income(self):
-        self.gross_income = float(self.self.Gross_incometxt.get())
+        self.gross_income = float(self.Gross_incometxt.get())
         # SSS contribution computation
         if self.gross_income < 4250:
             self.sss_contribution = 180
@@ -244,13 +239,8 @@ class GUI:
         self.total_deductxt.delete(0, 'end')
 
     def Save_data(self):
-
-        self.regulardeduc = float(self.sss_contritxt.get()) + float(self.philhealth_contritxt.get()) + float(
-            self.pagibig_contritxt.get()) + float(self.incometax_contritxt.get())
-        self.otherdeduc = float(self.sss_loantxt.get()) + float(self.pagibig_loantxt.get()) + float(
-            self.faculty_savings_deposittxt.get()) + float(self.faculty_savings_loantxt.get()) + float(
-            self.salary_loantxt.get()) + float(self.other_loantxt.get())
-
+        self.regulardeduc = float(self.sss_contritxt.get()) + float(self.philhealth_contritxt.get()) + float(self.pagibig_contritxt.get()) + float(self.incometax_contritxt.get())
+        self.otherdeduc = float(self.sss_loantxt.get()) + float(self.pagibig_loantxt.get()) + float(self.faculty_savings_deposittxt.get()) + float(self.faculty_savings_loantxt.get()) + float(self.salary_loantxt.get()) + float(self.other_loantxt.get())
         self.employee_number = self.employee_numbertxt.get()
         self.basic_income = self.Income1txt.get()
         self.hononarium_income = self.Income2txt.get()
@@ -263,13 +253,12 @@ class GUI:
 
         query1 = """INSERT INTO income_tbl (employee_number, basic_income, hononarium_income, other_income, gross_income, regular_deduction, other_deduction, total_deduction, net_income) VALUES(?,?,?,?,?,?,?,?,?)"""
 
-        query1inp = (self.employee_number, self.basic_income, self.hononarium_income, self.other_income, self.gross_income, self.regular_deduction,
-                     self.other_deduction, self.total_deduction, self.net_income)
+        query1inp = (self.employee_number, self.basic_income, self.hononarium_income, self.other_income, self.gross_income, self.regular_deduction, self.other_deduction, self.total_deduction, self.net_income)
 
-        con.execute(query1, query1inp)
+        self.con.execute(query1, query1inp)
 
-        con.commit()
-        con.close()
+        self.con.commit()
+        self.con.close()
 
     # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -399,7 +388,12 @@ class GUI:
         self.salary_loantxt = gui_design2.textbox1(frame1, 750, 660, 18)
         self.other_loantxt = gui_design2.textbox1(frame1, 750, 690, 18)
 
-        total_deductxt = gui_design2.textbox1(frame1, 750, 790, 18)
+        self.total_deductxt = gui_design2.textbox1(frame1, 750, 790, 18)
+        return self.employee_numbertxt, self.Departmenttxt, self.Rate_hour1txt, self.No_Hours1txt, self.Income1txt, self.Rate_hour2txt, self.No_Hours2txt\
+    , self.Rate_hour3txt, self.No_Hours3txt, self.Gross_incometxt, self.Net_incometxt, self.firstnametxt, self.middlenametxt, self.surnametxt, self.civilstatustxt\
+    , self.qualified_dependent_statustxt, self.paydatetxt, self.employee_statustxt, self.designationtxt, self.sss_contritxt, self.philhealth_contritxt, self.pagibig_loantxt\
+    , self.incometax_contritxt, self.incometax_contritxt, self.sss_loantxt, self.pagibig_loantxt, self.faculty_savings_deposittxt, self.faculty_savings_loantxt, self.salary_loantxt\
+    , self.other_loantxt
 
 
 GUI = GUI()
@@ -409,4 +403,5 @@ GUI.Gross_Income()
 GUI.Search_data()
 GUI.Net_Income()
 GUI.Clear_data()
+window.resizable(False, False)
 window.mainloop()

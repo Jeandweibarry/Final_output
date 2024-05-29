@@ -1,6 +1,7 @@
 import tkinter as tk
 import Create_account
 import sqlite3
+import Inside_the_app
 
 root = tk.Tk()
 
@@ -53,13 +54,12 @@ class GUI:
         result = cursor1.fetchone()
         if result == (self.username_entry.get(), self.password_entry.get()):
             root.destroy()
-            import Inside_the_app
             ITA = Inside_the_app.GUI()
             ITA.create_content()
-
         else:
             self.access_denied = tk.Label(self.main_frame, text="Access denied, try again", font=("arial", 20), bg="#CDCDCD")
             self.access_denied.place(y=280, x=50)
+            pass
         self.con.commit()
         self.con.close()
 
