@@ -112,13 +112,13 @@ class GUI:
         main_frame = gui_design2.create_canvas(0, 0)
 
         # Frames -----------------------------------------------------------------------------------------------------------------
-        self.frame1 = gui_design2.create_frames(main_frame, 25, 120, 'gray', 930, 180)
+        self.frame1 = gui_design2.create_frames(main_frame, 25, 120, 'light gray', 930, 180)
 
-        self.frame2 = gui_design2.create_frames(main_frame, 25, 320, 'gray', 930, 170)
+        self.frame2 = gui_design2.create_frames(main_frame, 25, 320, 'light gray', 930, 170)
 
-        self.frame3 = gui_design2.create_frames(main_frame, 25, 520, 'gray', 930, 150)
+        self.frame3 = gui_design2.create_frames(main_frame, 25, 520, 'light gray', 930, 150)
 
-        self.frame4 = gui_design2.create_frames(main_frame, 25, 700, 'gray', 930, 360)
+        self.frame4 = gui_design2.create_frames(main_frame, 25, 700, 'light gray', 930, 360)
 
         # HEADER -----------------------------------------------------------------------------------------------------------------
         titleheading = gui_design2.label2(main_frame, 110, 10, 'EMPLOYEE PERSONAL INFORMATION', 30, 'bold')
