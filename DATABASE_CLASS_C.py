@@ -280,7 +280,7 @@ def Save_data():
 main_frame = gui_design2.create_canvas(0, 0)
 
 # FRAME -----------------------------------------------------------------------------------------------------------------
-frame1 = gui_design2.create_frames(main_frame, 30, 120, 'light pink',930, 1000)
+frame1 = gui_design2.create_frames(main_frame, 30, 120, 'light blue',930, 1000)
 
 #PICTURE / BACKGROUND -----------------------------------------------------------------------------------------------------------------
 # picture = gui_design2.picture(frame1,50, 80,200,200, 'C:\\Users\\Stan Lee\\Downloads\\Profile.jpg')
