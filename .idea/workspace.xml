@@ -10,9 +10,7 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
     <list default="true" id="a1e61e87-47a3-477d-aad5-521bb2189947" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/DATABASE_CLASS_C.py" beforeDir="false" afterPath="$PROJECT_DIR$/DATABASE_CLASS_C.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inside_the_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inside_the_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guiclass.py" beforeDir="false" afterPath="$PROJECT_DIR$/guiclass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
 =======
     <list default="true" id="a1e61e87-47a3-477d-aad5-521bb2189947" name="Changes" comment="" />
@@ -41,6 +39,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.DATABASE_CLASS_C.executor": "Run",
@@ -53,8 +52,18 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main"
 >>>>>>> c7de6ed2daef9857d1a15182d34b395155e28463
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.DATABASE_CLASS_C.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Inside_the_app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+>>>>>>> Stashed changes
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
