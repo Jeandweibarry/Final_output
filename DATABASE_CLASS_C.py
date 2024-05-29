@@ -3,8 +3,6 @@
 # import guiclass
 #
 # gui_design2 = guiclass.employee_personal_info()
-# window = tk.Tk()
-#
 #
 # # --------------------------------------------------------------------------------------------------------------------------------------------------------
 #
@@ -13,22 +11,23 @@
 #     def __init__(self):
 #         self.con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
 #         self.cursor = self.con.cursor()
+#
 #     def Search_data(self):
 #         # GET EMPLOYEE DATA
-#         employee_number = self.employee_numbertxt.get()
-#         print(employee_number)
+#         self.employee_number = self.employee_numbertxt.get()
+#         print(self.employee_number)
 #         self.cursor.execute(f"SELECT * FROM basic_info WHERE employee_number = {employee_number}")
-#         employee = self.cursor.fetchone()
-#         if employee:
-#             self.Departmenttxt.insert(0, employee[8])
-#             self.firstnametxt.insert(0, employee[0])
-#             self.middlenametxt.insert(0, employee[1])
-#             self.surnametxt.insert(0, employee[2])
-#             self.civilstatustxt.insert(0, employee[7])
-#             self.qualified_dependent_statustxt.insert(0, employee[10])
-#             self.paydatetxt.insert(0, employee[12])
-#             self.employee_statustxt.insert(0, employee[11])
-#             self.designationtxt.insert(0, employee[9])
+#         self.employee = self.cursor.fetchone()
+#         if self.employee:
+#             self.Departmenttxt.insert(0, self.employee[8])
+#             self.firstnametxt.insert(0, self.employee[0])
+#             self.middlenametxt.insert(0, self.employee[1])
+#             self.surnametxt.insert(0, self.employee[2])
+#             self.civilstatustxt.insert(0, self.employee[7])
+#             self.qualified_dependent_statustxt.insert(0, self.employee[10])
+#             self.paydatetxt.insert(0, self.employee[12])
+#             self.employee_statustxt.insert(0, self.employee[11])
+#             self.designationtxt.insert(0, self.employee[9])
 #
 #         self.con.close()
 #
@@ -239,6 +238,7 @@
 #         self.total_deductxt.delete(0, 'end')
 #
 #     def Save_data(self):
+#         print(self.sss_contritxt, self.philhealth_contritxt, self.pagibig_contritxt, self.incometax_contritxt)
 #         self.regulardeduc = float(self.sss_contritxt.get()) + float(self.philhealth_contritxt.get()) + float(self.pagibig_contritxt.get()) + int(self.incometax_contritxt.get())
 #         self.otherdeduc = float(self.sss_loantxt.get()) + float(self.pagibig_loantxt.get()) + float(self.faculty_savings_deposittxt.get()) + float(self.faculty_savings_loantxt.get()) + float(self.salary_loantxt.get()) + float(self.other_loantxt.get())
 #         self.employee_number = self.employee_numbertxt.get()
@@ -259,13 +259,17 @@
 #
 #         self.con.commit()
 #         self.con.close()
+#         self.window.mainloop()
 #
 #     # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #
 #     # -------------------------------------------------------------------------------------------------------------------------------------------------------------
 #
 #     def create_content(self):
-#         window.geometry("1000x1500")
+#         self.window = tk.Tk()
+#         self.window.geometry("1000x1500")
+#         self.window.resizable(False, False)
+#
 #         # CANVAS ------------------------------------------------------------------------------------------------------------------------------------
 #         main_frame = gui_design2.create_canvas(0, 0)
 #
@@ -394,8 +398,7 @@
 #     , self.qualified_dependent_statustxt, self.paydatetxt, self.employee_statustxt, self.designationtxt, self.sss_contritxt, self.philhealth_contritxt, self.pagibig_loantxt\
 #     , self.incometax_contritxt, self.incometax_contritxt, self.sss_loantxt, self.pagibig_loantxt, self.faculty_savings_deposittxt, self.faculty_savings_loantxt, self.salary_loantxt\
 #     , self.other_loantxt
-
-
+#
 # GUI = GUI()
 # GUI.create_content()
 # GUI.Save_data()
@@ -403,12 +406,12 @@
 # GUI.Search_data()
 # GUI.Net_Income()
 # GUI.Clear_data()
-# window.resizable(False, False)
-# window.mainloop()
+
 
 import tkinter as tk
 import sqlite3
 
+import Inside_the_app
 
 con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
 cursor = con.cursor()

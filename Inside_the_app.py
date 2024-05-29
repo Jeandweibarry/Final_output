@@ -1,20 +1,22 @@
 import sqlite3
 import tkinter as tk
 
-con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
-
 import guiclass
-
-window = tk.Tk()
-window.title('Login System')
-window.geometry('1000x1500')
-window.resizable(False, False)
 
 gui_design2 = guiclass.employee_personal_info()
 
 
 # PROGRAM THAT WILL TRANSFER DATA FROM GUI TO DATA BASE -------------------------------------------------------------------------------------------------------
 class GUI:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title('Login System')
+        self.window.geometry("1000x1500")
+        self.window.resizable(False, False)
+        self.con = sqlite3.connect("D:\\Users\\Jeff Bayhon\\Downloads\\employee_personal_info.db")
+
+    def no(self):
+        quit()
     def Transfer_data(self):
         # INSERT
         firstname = self.firstnametxt.get()
@@ -54,12 +56,12 @@ class GUI:
         query2inp = (contact_no, email, other_social, social_id)
         query3inp = (add_line1, add_line2, city_municipality, country, state_province, zipcode, pic_path)
 
-        con.execute(query1, query1inp)
-        con.execute(query2, query2inp)
-        con.execute(query3, query3inp)
+        self.con.execute(query1, query1inp)
+        self.con.execute(query2, query2inp)
+        self.con.execute(query3, query3inp)
 
-        con.commit()
-        con.close()
+        self.con.commit()
+        self.con.close()
 
         # DELETE
         self.firstnametxt.delete(0, 'end')
@@ -90,12 +92,13 @@ class GUI:
         self.picture_pathtxt.delete(0, 'end')
 
         print("Data transfered...")
-        # END PROGRAM
-        window.mainloop()
         import DATABASE_CLASS_C
+        GUI = DATABASE_CLASS_C.GUI()
+        GUI.create_content()
+        # END PROGRAM
+        self.window.mainloop()
 
-    def no(self):
-        quit()
+
 
     def create_content(self):
         # --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
