@@ -1,6 +1,13 @@
 import tkinter as tk
 import sqlite3
 
+<<<<<<< Updated upstream
+=======
+#oyatot
+
+=======
+>>>>>>> c7de6ed2daef9857d1a15182d34b395155e28463
+>>>>>>> Stashed changes
 class account_registration:
     def __init__(self):
         self.Access = None
